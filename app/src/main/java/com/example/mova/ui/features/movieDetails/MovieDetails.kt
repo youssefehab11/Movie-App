@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -76,9 +77,12 @@ import com.example.mova.ui.theme.primaryColor
 import com.example.mova.ui.theme.secondaryColor
 
 @Composable
-fun MovieDetails() {
+fun MovieDetails(
+    onBackClick: () -> Unit
+) {
     Column(
         modifier = Modifier
+            .navigationBarsPadding()
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
     ) {
@@ -105,7 +109,7 @@ fun MovieDetails() {
                     .fillMaxWidth()
                     .padding(12.dp)
             ) {
-                IconButton(onClick = { /*TODO*/ }) {
+                IconButton(onClick = { onBackClick() }) {
                     Icon(
                         painter = painterResource(id = R.drawable.back_arrow_icon),
                         contentDescription = null,

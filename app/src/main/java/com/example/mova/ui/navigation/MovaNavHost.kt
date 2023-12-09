@@ -9,6 +9,7 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -31,6 +32,7 @@ enum class MovaAppScreens {
 @Composable
 fun MovaNavHost(
     navController: NavHostController,
+    modifier: Modifier
 ){
     NavHost(
         navController = navController,
@@ -72,7 +74,9 @@ fun MovaNavHost(
             enterTransition = { NavigationAnimation.slideRightAnimation() },
             exitTransition = { NavigationAnimation.slideLeftAnimation() }
         ){
-            MovieDetails()
+            MovieDetails(){
+                navController.popBackStack()
+            }
         }
     }
 }

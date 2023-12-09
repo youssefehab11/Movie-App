@@ -29,12 +29,11 @@ fun MovaApp(
         bottomBar = { if(showBottomNavigationBar) BottomNavigationBar(navController)},
         )
     {
-        Box(
-            modifier = Modifier.padding(it)
-        ) {
+
             MovaNavHost(
                 navController = navController,
+                modifier = Modifier.padding(it)
             )
-        }
+
     }
 }
