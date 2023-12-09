@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Mova</string>
+    <string name="search">Search</string>
+    <string name="top_searches">Top Searches</string>
+    <string name="not_found">Not Found</string>
+    <string name="not_found_message">Sorry, the keyword you entered could not be found. Try to check again or search with other keywords</string>
+    <string name="sort_filter"><![CDATA[Sort & Filter]]></string>
+    <string name="reset">Reset</string>
+    <string name="apply">Apply</string>
+    <string name="play">Play</string>
+    <string name="download">Download</string>
+    <string name="genre">"Genre:"</string>
+    <string name="see_all">See all</string>
+    <string name="reply">Reply</string>
+</resources>
