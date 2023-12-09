@@ -33,7 +33,7 @@ class ExploreViewModel @Inject constructor(
         private set
 
     init {
-        //getMovies()
+        getMovies()
     }
 
     private fun getMovies() {
@@ -49,23 +49,23 @@ class ExploreViewModel @Inject constructor(
     }
 
     fun applyFilter() {
-//        toggleBottomSheetState()
-//        exploreUiState = ExploreUiState.Loading
-//        viewModelScope.launch {
-//            exploreUiState = try {
-//                var result = movaRepository.getMovies()
-//                Log.d("result", "applyFilter: $result")
-//                result = result.filter { it.genre!!.contains(filterUiState.genre) }
-//                Log.d("resultFiltered", "applyFilter: $result")
-//                ExploreUiState.Success(result)
-//            } catch (e: Exception) {
-//                throw e
-//                //ExploreUiState.Error
-//            } catch (e: IOException) {
-//                throw e
-//                //ExploreUiState.Error
-//            }
-//        }
+        toggleBottomSheetState()
+        exploreUiState = ExploreUiState.Loading
+        viewModelScope.launch {
+            exploreUiState = try {
+                var result = movaRepository.getMovies()
+                Log.d("result", "applyFilter: $result")
+                result = result.filter { it.genre!!.contains(filterUiState.genre) }
+                Log.d("resultFiltered", "applyFilter: $result")
+                ExploreUiState.Success(result)
+            } catch (e: Exception) {
+                throw e
+                //ExploreUiState.Error
+            } catch (e: IOException) {
+                throw e
+                //ExploreUiState.Error
+            }
+        }
     }
 
     fun selectFilter(filterComponent: FilterComponent, index: Int) {
